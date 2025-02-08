@@ -113,25 +113,25 @@ const Home: NextPage = () => {
   return (
     <div className='flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen'>
       <Head>
-        <title>Restore Photos</title>
+        <title>Restaurar Fotos</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <Header photo={session?.user?.image || undefined} />
       <main className='flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8'>
         <h1 className='mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5'>
-          Restore any face photo
+          Restaura cualquier foto
         </h1>
         {status === 'authenticated' && data && (
           <p className='text-slate-500'>
-            You have{' '}
+            Te quedan{' '}
             <span className='font-semibold'>
-              {data.remainingGenerations} generations
+              {data.remainingGenerations} generaciones
             </span>{' '}
-            left today. Your generation
-            {Number(data.remainingGenerations) > 1 ? 's' : ''} will renew in{' '}
+            hoy. Tus generaciones
+            {Number(data.remainingGenerations) > 1 ? 's' : ''} se renovarán{' '}
             <span className='font-semibold'>
-              {data.hours} hours and {data.minutes} minutes.
+              {data.hours} horas y {data.minutes} minutos.
             </span>
           </p>
         )}
@@ -166,9 +166,8 @@ const Home: NextPage = () => {
             !originalPhoto && (
               <div className='h-[250px] flex flex-col items-center space-y-6 max-w-[670px] -mt-8'>
                 <div className='max-w-xl text-gray-600'>
-                  Sign in below with Google to create a free account and restore
-                  your photos today. You will be able to restore 2 photos per
-                  day for free.
+                Inicia sesión con Google para crear una cuenta gratuita y restaurar tus fotos. 
+                Podrás restaurar 2 fotos por día de forma gratuita.
                 </div>
                 <button
                   onClick={() => signIn('google')}
@@ -180,7 +179,7 @@ const Home: NextPage = () => {
                     height={20}
                     alt="google's logo"
                   />
-                  <span>Sign in with Google</span>
+                  <span>Iniciar sesión con Google</span>
                 </button>
               </div>
             )
@@ -197,7 +196,7 @@ const Home: NextPage = () => {
           {restoredImage && originalPhoto && !sideBySide && (
             <div className='flex sm:space-x-4 sm:flex-row flex-col'>
               <div>
-                <h2 className='mb-1 font-medium text-lg'>Original Photo</h2>
+                <h2 className='mb-1 font-medium text-lg'>Foto Original</h2>
                 <Image
                   alt='original photo'
                   src={originalPhoto}
@@ -207,7 +206,7 @@ const Home: NextPage = () => {
                 />
               </div>
               <div className='sm:mt-0 mt-8'>
-                <h2 className='mb-1 font-medium text-lg'>Restored Photo</h2>
+                <h2 className='mb-1 font-medium text-lg'>Foto Restaurada</h2>
                 <a href={restoredImage} target='_blank' rel='noreferrer'>
                   <Image
                     alt='restored photo'
@@ -237,7 +236,7 @@ const Home: NextPage = () => {
               role='alert'
             >
               <div className='bg-red-500 text-white font-bold rounded-t px-4 py-2'>
-                Please try again in 24 hours
+                Intenta de nuevo en 24 horas
               </div>
               <div className='border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700'>
                 {error}
@@ -255,7 +254,7 @@ const Home: NextPage = () => {
                 }}
                 className='bg-black rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-black/80 transition'
               >
-                Upload New Photo
+                Sube una nueva foto
               </button>
             )}
             {restoredLoaded && (
@@ -265,7 +264,7 @@ const Home: NextPage = () => {
                 }}
                 className='bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition'
               >
-                Download Restored Photo
+                Descargar foto restaurada
               </button>
             )}
           </div>

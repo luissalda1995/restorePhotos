@@ -3,24 +3,24 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang='en'>
+      <Html lang='es'>
         <Head>
           <link rel='icon' href='/favicon.ico' />
           <meta
             name='description'
-            content='Restore your old face photos and keep the memories alive.'
+            content='Restaura tus fotos antiguas y conserva tus recuerdos.'
           />
           <meta property='og:site_name' content='restorePhotos.io' />
           <meta
             property='og:description'
-            content='Restore your old face photos and keep the memories alive.'
+            content='Restaura tus fotos antiguas y conserva tus recuerdos.'
           />
           <meta property='og:title' content='Face Photo Restorer' />
           <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:title' content='Face Photo Restorer' />
           <meta
             name='twitter:description'
-            content='Restore your old photos and keep the memories alive.'
+            content='Restaura tus fotos antiguas y conserva tus recuerdos.'
           />
           <meta
             property='og:image'
